@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form
+        {
+            padding:20px 30px;
+        }
+    </style>
+</head>
+<body>
+    <form name="form" onsubmit="validationform()" validation>
+        First Name: <input type="text" name="Fname"><br><br>
+        Last Name: <input type="text" name="Lname"><br><br>
+        Email: <input type="email" name="Email"><br><br>
+        Phone: <input type="text" name="phone"><br><br>
+        <input type="Submit" value="Submit"> 
+    </form>
+<script>
+function validationform(){
+    var Fname= document.forms ["form"]["Fname"].value;
+    var Lname= document.forms ["form"]["Lname"].value;
+    var Email= document.forms ["form"]["Email"].value;
+    var phone= document.forms ['form']['phone'].value;
+    if(Fname=="" && Lname=="" && Email=="" && phone=="")
+    {
+        alert("All the fields are mandatory");
+    }
+    else if(Fname=="" || Lname=="" && Email!="" && phone!="")
+    {
+        alert("Please enter your name.");
+    }
+    else if(Fname!="" && Lname!="" && Email=="" && phone!="")
+    {
+        alert("Please enter your email address");
+    }
+    else if(Fname!="" && Lname!="" && Email!="" && phone=="")
+    {
+        alert("Please enter a valid phone number");
+    }
+    else if(Fname!="" && Lname!="" && Email!="" && phone!="")
+    {
+        alert("Thank you for your feedback!");
+    }  
+    else{
+        alert("Please try again!");  
+    }
+}
+</script>
+</body>
+</html>
